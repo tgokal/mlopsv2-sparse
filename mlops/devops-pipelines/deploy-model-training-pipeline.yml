@@ -21,8 +21,8 @@ pool:
 
 resources:
   repositories:
-    - repository: mlops-templates  # Template Repo
-      name: Azure/mlops-templates # need to change org name from "Azure" to your own org
+    - repository: mlopsv2-templates  # Template Repo
+      name: tgokal/mlopsv2-templates # need to change org name from "Azure" to your own org
       endpoint: github-connection # need to set up and hardcode
       type: github
       ref: main
@@ -38,16 +38,16 @@ stages:
         path: s/
       - checkout: mlops-templates
         path: s/templates/
-      - template: templates/${{ variables.version }}/install-az-cli.yml@mlops-templates
-      - template: templates/${{ variables.version }}/install-aml-cli.yml@mlops-templates
-      - template: templates/${{ variables.version }}/connect-to-workspace.yml@mlops-templates
-      - template: templates/${{ variables.version }}/register-environment.yml@mlops-templates
+      - template: templates/${{ variables.version }}/install-az-cli.yml@mlopsv2-templates
+      - template: templates/${{ variables.version }}/install-aml-cli.yml@mlopsv2-templates
+      - template: templates/${{ variables.version }}/connect-to-workspace.yml@mlopsv2-templates
+      - template: templates/${{ variables.version }}/register-environment.yml@mlopsv2-templates
         parameters:
           build_type: conda
           environment_name: taxi-train-env
           environment_file: mlops/azureml/train/train-env.yml
           enable_monitoring: $(enable_monitoring)
-      - template: templates/${{ variables.version }}/run-pipeline.yml@mlops-templates
+      - template: templates/${{ variables.version }}/run-pipeline.yml@mlopsv2-templates
         parameters: 
           pipeline_file: mlops/azureml/train/pipeline.yml
           experiment_name: $(environment)_taxi_fare_train_$(Build.SourceBranchName)
