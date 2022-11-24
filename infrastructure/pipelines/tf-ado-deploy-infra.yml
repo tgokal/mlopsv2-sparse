@@ -34,9 +34,9 @@ stages :
         path: s/
       - checkout: mlopsv2-templates
         path: s/templates/
-      - template: templates/infra/create-resource-group.yml@mlops-templates
-      - template: templates/infra/create-storage-account.yml@mlops-templates
-      - template: templates/infra/create-storage-container.yml@mlops-templates
+      - template: templates/infra/create-resource-group.yml@mlopsv2-templates
+      - template: templates/infra/create-storage-account.yml@mlopsv2-templates
+      - template: templates/infra/create-storage-container.yml@mlopsv2-templates
   - stage: DeployAzureMachineLearningRG
     displayName: Deploy AML Workspace
     jobs:
@@ -47,9 +47,9 @@ stages :
         path: s/
       - checkout: mlopsv2-templates
         path: s/templates/
-      - template: templates/infra/create-sp-variables.yml@mlops-templates
-      - template: templates/infra/install-terraform.yml@mlops-templates
-      - template: templates/infra/run-terraform-init.yml@mlops-templates
-      - template: templates/infra/run-terraform-validate.yml@mlops-templates
-      - template: templates/infra/run-terraform-plan.yml@mlops-templates
-      - template: templates/infra/run-terraform-apply.yml@mlops-templates
+      - template: templates/infra/create-sp-variables.yml@mlopsv2-templates
+      - template: templates/infra/install-terraform.yml@mlopsv2-templates
+      - template: templates/infra/run-terraform-init.yml@mlopsv2-templates
+      - template: templates/infra/run-terraform-validate.yml@mlopsv2-templates
+      - template: templates/infra/run-terraform-plan.yml@mlopsv2-templates
+      - template: templates/infra/run-terraform-apply.yml@mlopsv2-templates
