@@ -36,7 +36,7 @@ stages:
       steps:
       - checkout: self
         path: s/
-      - checkout: mlops-templates
+      - checkout: mlopsv2-templates
         path: s/templates/
       - template: templates/${{ variables.version }}/install-az-cli.yml@mlopsv2-templates
       - template: templates/${{ variables.version }}/install-aml-cli.yml@mlopsv2-templates
