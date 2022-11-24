@@ -17,8 +17,8 @@ pool:
 
 resources:
   repositories:
-    - repository: mlops-templates 
-      name: Azure/mlops-templates 
+    - repository: mlopsv2-templates 
+      name: tgokal/mlops-templates 
       endpoint: github-connection
       type: github
       ref: main #branch name
